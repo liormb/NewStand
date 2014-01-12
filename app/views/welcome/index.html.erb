@@ -1,0 +1,11 @@
+<h4><%= @url %></h4>
+<hr>
+	<% @response.each do |k1,v1| %>
+		<% v1.each_with_index do |v2,k2| %>
+			<h2><%= v2['title'] %></h2>
+			<h5><%= v2['pubDate'] %></h5>
+			<p><%= v2['description'] %></p>
+			<img class="main-image" src="<%= @image_urls[k2] %>" width="200" height="200"><br>
+			<a href="<%= v2['guid'][0]['value'] if v2['guid'][0]['isPermalink'] %>" target="_blank">LINK</a>
+		<% end %>
+	<% end %>
