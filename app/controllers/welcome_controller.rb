@@ -2,16 +2,16 @@ class WelcomeController < ApplicationController
 	def index
 
 		# Yelp
-		consumer_key = 'WDjHW7RTo2sh5ELtVbPMlw'
-		consumer_secret = 'GZZNzX0H2s82byYReZUJyUrEWoI'
-		token = 'P6Osq4PTLW5zdCH-EWj2EIvU4ONb-ary'
-		token_secret = '0BBdf3SbkGkwi4MfAWXj_T1Wed0'
-		api_host = 'api.yelp.com'
-		path = "/v2/search?term=restaurants&location=new%20york"
+		# consumer_key = 'WDjHW7RTo2sh5ELtVbPMlw'
+		# consumer_secret = 'GZZNzX0H2s82byYReZUJyUrEWoI'
+		# token = 'P6Osq4PTLW5zdCH-EWj2EIvU4ONb-ary'
+		# token_secret = '0BBdf3SbkGkwi4MfAWXj_T1Wed0'
+		# api_host = 'api.yelp.com'
+		# path = "/v2/search?term=restaurants&location=new%20york"
 
-		consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
-		access_token = OAuth::AccessToken.new(consumer, token, token_secret)
-		@yelp_response = access_token.get(path).body
+		# consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
+		# access_token = OAuth::AccessToken.new(consumer, token, token_secret)
+		# @yelp_response = access_token.get(path).body
 
 		# The Guardian
 		guardian_api_key_content = "rn8t8n9vuhf854p6zt8e45ct"
