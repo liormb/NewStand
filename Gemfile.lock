@@ -58,6 +58,7 @@ GEM
     mime-types (1.25.1)
     multi_json (1.8.4)
     multi_xml (0.5.5)
+    oauth (0.4.7)
     pg (0.17.1)
     polyglot (0.3.3)
     pry (0.9.12.4)
@@ -131,6 +132,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   httparty
   jquery-rails
+  oauth
   pg
   pry
   pry-rails

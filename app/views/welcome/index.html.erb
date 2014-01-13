@@ -1,11 +1,50 @@
-<h4><%= @url %></h4>
-<hr>
-	<% @response.each do |k1,v1| %>
-		<% v1.each_with_index do |v2,k2| %>
-			<h2><%= v2['title'] %></h2>
-			<h5><%= v2['pubDate'] %></h5>
-			<p><%= v2['description'] %></p>
-			<img class="main-image" src="<%= @image_urls[k2] %>" width="200" height="200"><br>
-			<a href="<%= v2['guid'][0]['value'] if v2['guid'][0]['isPermalink'] %>" target="_blank">LINK</a>
+<!-- Yelp -->
+<p><%= @yelp_response %></p>
+
+<!-- The Guardian -->
+<% @guardian_response['response']['editorsPicks'][0..(@guardian_limit-1)].each do |v2,k2| %>
+		<h5>The Guardian</h5>
+		<h2><%= v2['webTitle'] %></h2>
+		<h5><%= v2['webPublicationDate'] %></h5>
+		<%
+			trailText = v2['fields']['trailText']
+			standfirst = v2['fields']['standfirst']
+			description = trailText[0..2] == "<p>" ? standfirst : trailText
+		%>
+		<p><%= description %></p>
+		<% image_url = v2['fields'].empty? ? "empty" : v2['fields']['thumbnail'] %>
+		<% if not image_url.empty? %>
+			<img src="<%= image_url %>" alt="<%= v2['webTitle'] %>" width="120" height="120">
 		<% end %>
+		<br><a href="<%= v2['webUrl'] %>" target="_blank">LINK</a>
+		<hr>
+<% end %>
+
+<!-- New York Times -->
+<% @nytimes_response['results'].each do |v2,k2| %>
+		<h5><%= v2['source'] %></h5>
+		<h2><%= v2['title'] %></h2>
+		<h5><%= v2['published_date'] %></h5>
+		<p><%= v2['abstract'] %></p>
+		<% image_url = v2['multimedia'].empty? ? v2['thumbnail_standard'] : v2['multimedia'][0]['url'] %>
+		<% if not image_url.empty? %>
+			<img src="<%= image_url %>" alt="<%= v2['title'] %>" width="120" height="120">
+		<% end %>
+		<br><a href="<%= v2['url'] %>" target="_blank">LINK</a>
+		<hr>
+<% end %>
+
+<!-- USA Today -->
+<% @usatoday_response.each do |k1,v1| %>
+	<% v1.each_with_index do |v2,k2| %>
+		<h5>USA Today</h5>
+		<h2><%= v2['title'] %></h2>
+		<h5><%= v2['pubDate'] %></h5>
+		<p><%= v2['description'] %></p>
+		<% if not @usatoday_image_urls[k2] == "default_image_url" %>
+			<img class="main-image" src="<%= @usatoday_image_urls[k2] %>" alt="<%= v2['title'] %>" width="120" height="120">
+		<% end %>
+		<br><a href="<%= v2['guid'][0]['value'] if v2['guid'][0]['isPermalink'] %>" target="_blank">LINK</a>
+		<hr>
 	<% end %>
+<% end %>
