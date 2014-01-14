@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+.alert {
+  color: red;
+  font-style: italic;
+  font-family: "Times";
+  font-size: 8px;
+}

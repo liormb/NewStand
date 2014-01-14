@@ -13,10 +13,10 @@ namespace :db do
 	
 	desc "seed the databse"
 	task :seed do 
-		User.create(
-			{first_name: "Lior",last_name: "Elrom",email: "liormb@yahoo.com",username: "liormb",password: "1234"},
-			{first_name: "Tim",last_name: "Elrom",email: "timmb@yahoo.com",username: "tim",password: "1234"}
-		)
+		# User.create(
+		# 	{first_name: "Lior",last_name: "Elrom",email: "liormb@yahoo.com",password: "1234"},
+		# 	{first_name: "Tim",last_name: "Elrom",email: "timmb@yahoo.com",username: "tim",password: "1234"}
+		# )
 		Group.create(
 			{name: "Group Name",admin_id: 1,source: "New York Times",title: "Article Title",description: "This is an article",article_url: "http://www.nytimes.com/video/world/middleeast/100000002647221/biden-gives-eulogy-at-sharons-funeral.html"}
 		)
