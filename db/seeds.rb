@@ -30,12 +30,5 @@ namespace :db do
 			{user_id: 1,group_id: 1,comment_id: 1}
 		)
 	end
-
-	desc "clear the databse"
-	task :clear do 
-		User.delete_all
-		Group.delete_all
-		UsersGroup.delete_all
-	end
 	
 end
