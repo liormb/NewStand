@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   end
 
   def show
+  	sign_out :user
+		sign_out @user
 		redirect_to "/"
 	end
   

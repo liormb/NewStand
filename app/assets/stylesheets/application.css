@@ -8,10 +8,19 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require bootstrap-theme.min
+ *= require bootstrap.min
  *= require_self
  *= require_tree .
  */
 
+.container:first-child {
+	background: rgb(240,240,240) url(noise.png);
+}
+.jumbotron {
+	background: rgb(60,60,60);
+	color: rgb(240,240,240);
+}
 .alert {
   color: red;
   font-style: italic;

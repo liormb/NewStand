@@ -8,18 +8,22 @@
 </head>
 <body>
 
-	<% if user_signed_in? %>
-		<h5>Hello <%= User.find(current_user.id).fullname %></h5>
-		<a href="<%= destroy_user_session_path %>">Sign Out</a>
-	<% else %>
-		<a href="<%= user_session_path %>">Sign In</a>
-		<a href="<%= new_user_registration_path %>">Sign Up</a>
-	<% end %>
+	<div class="container col-lg-12">
+		<header class="page-header col-lg-8 col-md-offset-2">
+			<% if user_signed_in? %>
+				<h5>Hello <%= User.find(current_user.id).fullname %></h5>
+				<a href="/users/sign_out">Sign Out</a>
+			<% else %>
+				<a href="<%= user_session_path %>">Sign In</a>
+				<a href="<%= new_user_registration_path %>">Sign Up</a>
+			<% end %>
 
-	<p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-	
-	<%= yield %>
-
+			<p class="notice"><%= notice %></p>
+		  <p class="alert"><%= alert %></p>
+	  </header>
+		<div class="col-lg-8 col-md-offset-2">
+			<%= yield %>
+		</div>
+	</div>
 </body>
 </html>
