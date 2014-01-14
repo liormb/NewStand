@@ -1,5 +1,5 @@
 NewStand Application
 
-In this application, users can watch news upon their preferences, open group descusions and leave comments to each other.
+Website: http://newstand.herokuapp.com/
 
-http://newstand.herokuapp.com/
+In this application, users can watch news upon their personal preferences, open a group descusions, leave comments and like each others comments.
