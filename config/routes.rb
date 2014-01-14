@@ -3,6 +3,8 @@ Newstand::Application.routes.draw do
   devise_for :users
   resources :users, :except => [:create, :new]
 
+  # root :to => "home#index"
+
   get '/' => 'welcome#index'
   
   # The priority is based upon order of creation:

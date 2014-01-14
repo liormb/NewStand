@@ -34,5 +34,9 @@ Newstand::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Set up default url options for the mailer in this environment
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  #config.action_mailer.default_url_options = { :host => 'http://newstand.herokuapp.com' }
   
 end
