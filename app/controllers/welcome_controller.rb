@@ -20,23 +20,23 @@ class WelcomeController < ApplicationController
 		limit = 5
 		usatoday_api_key_articles = "tbpz9ghqvkjegddnxmxc6pea"
 		usatoday_url = "http://api.usatoday.com/open/articles/topnews/"+section+"?count="+limit.to_s+"&days=0&page=0&encoding=json&api_key=" + usatoday_api_key_articles
-		@usatoday_response = HTTParty.get(usatoday_url)
+		# @usatoday_response = HTTParty.get(usatoday_url)
 
-		@usatoday_image_urls = []
-		@usatoday_response.each do |k1,v1|
-			v1.each do |v2|
-				image_tag = HTTParty.get(v2['guid'][0]['value'])
-				itemp = image_tag =~ (/class="articleBody"/)
-				itemp = image_tag =~ (/role="main"/) if itemp.nil?
-				if itemp.nil?
-					@usatoday_image_urls << "default_image_url"
-				else
-					istart = image_tag.index('src="',itemp)
-					iend = image_tag.index('"',(istart + 5))
-					@usatoday_image_urls << image_tag[(istart + 5)..(iend - 1)].gsub('amp;','')
-				end
-			end
-		end
+		# @usatoday_image_urls = []
+		# @usatoday_response.each do |k1,v1|
+		# 	v1.each do |v2|
+		# 		image_tag = HTTParty.get(v2['guid'][0]['value'])
+		# 		itemp = image_tag =~ (/class="articleBody"/)
+		# 		itemp = image_tag =~ (/role="main"/) if itemp.nil?
+		# 		if itemp.nil?
+		# 			@usatoday_image_urls << "default_image_url"
+		# 		else
+		# 			istart = image_tag.index('src="',itemp)
+		# 			iend = image_tag.index('"',(istart + 5))
+		# 			@usatoday_image_urls << image_tag[(istart + 5)..(iend - 1)].gsub('amp;','')
+		# 		end
+		# 	end
+		# end
 
 	end
 end
