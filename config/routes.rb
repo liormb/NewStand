@@ -1,14 +1,15 @@
 Newstand::Application.routes.draw do
 
   devise_for :users
-  resources :users, :except => [:create, :new, :destroy]
+  resources :users, :except => [:create, :new]
 
-  #get 'devise/sessions/destroy' :to => 'devise/sessions#new'
-  #get '/users/sign_out' :to => 'welcome#index'
+  #get '/users/sign_in' :to => 'users#index'
+
+  #get '/users/sign_out' :to => 'users#index'
   # root :to => "home#index"
   root :to => 'welcome#index'
 
-  #get '/' => 'welcome#index'
+  get '/' => 'welcome#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
