@@ -14,15 +14,133 @@
  *= require_tree .
  */
 
-.container:first-child {
-	background: rgb(240,240,240) url(noise.png);
+body {
+	background: rgb(40,40,40);
 }
-.jumbotron {
+.top-header-container,
+.bottom-header-container {
+	background: rgb(20,20,20);
+	color: white;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 80px;
+}
+.bottom-header-container {
+	height: 45px;
+	border-bottom: 4px solid rgb(94,133,192);
+	margin-bottom: 40px;
+	background: -webkit-linear-gradient(top,#2c2c2c 0,#121212 100%);
+	border-top: 1px solid #343434;
+	box-shadow: 0 2px 2px rgba(0,0,0,.2);
+}
+.bottom-header-container div {
+	border: none;
+	height: 45px;
+}
+header {
+	height: 100%;
+}
+.logo {
+	position: relative;
+	top: 20px;
+	left: 0;
+	background: url(logo.png) no-repeat;
+	width: 153px;
+	height: 43px;
+}
+
+/* search bar */
+.search {
+	position: absolute;
+	top: 18px;
+	right: 0;
+}
+.search input,
+.search button {
+	display: inline-block;
+	float: left;
+	height: 30px;
+	color: rgb(80,80,80);
+	border: none;
+}
+.search input[type=text] {
+	width: 240px;
+	height: 32px;
+	line-height: 20px;
+	font-size: 16px;
+	padding: 0 10px;
+	border-radius: 4px 0 0 4px;
 	background: rgb(60,60,60);
-	color: rgb(240,240,240);
+}
+.search button {
+	width: 30px;
+	padding: 15px;
+	background: rgb(94,133,192) url(search.png) 5px 5px no-repeat;
+	border-radius: 0 4px 4px 0;
+	text-indent: 9999px;
+	border: 1px solid rgb(94,133,192);
+	float: right;
+}
+.search button:hover {
+	background-color: rgb(74,133,192);
+	background-position: 5px 5px;
+	cursor: pointer;
+}
+.nav {
+	border: none;
+}
+.navbar {
+	border-radius: 0;
+	border: none;
+	background: transparent;
+	height: 40px;
+}
+.nav li a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+	color: white;
+}
+.nav li:hover {
+	background: rgba(40,40,40,.8);
+}
+.user {
+	position: absolute;
+	top: 0;
+	right: 15px;
+	height: 40px !important;
+}
+.user div {
+	width: 54px;
+	background: url(user.png) 20px 4px no-repeat;
+}
+.user ul {
+	border: 1px solid rgb(60,60,60);
+}
+.user .caret {
+	position: absolute;
+	top: 20px;
+	right: 40px;
+	color: white !important;
+}
+.user a {
+	padding: 0;
+}
+.user li:hover a {
+	background: rgb(94,133,192) !important;
+	color: white;
+}
+
+.jumbotron {
+	background: rgb(240,240,240) url(noise.png) repeat;
+	color: rgb(80,80,80);
 }
 .alert {
+	display: none;
   color: red;
+  background: red;
   font-style: italic;
   font-family: "Times";
   font-size: 8px;
