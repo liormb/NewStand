@@ -1,42 +1,18 @@
 class WelcomeController < ApplicationController
 	def index
 
+		@limit = 5
+
 		# The Guardian
-		guardian_api_key_content = "rn8t8n9vuhf854p6zt8e45ct"
-		limit = 5
-		@guardian_limit = limit
-		guardian_url = "http://content.guardianapis.com/?show-fields=trailText%2Cstandfirst%2Cthumbnail&show-editors-picks=true&edition=US&q=world&page-size=5"
-		@guardian_response = HTTParty.get(guardian_url)
+		@guardian_content = Guardian.content(["world"], @limit)
 
 		# New York Times
-		section = "world"  # u.s./sports and more
-		limit = 5
-		nytimes_api_key_newswire = "9b5f51aa3fbdd59b6c5b31d2211b06cb:3:68680752"
-		nytimes_url = "http://api.nytimes.com/svc/news/v3/content/all/"+section+"/.json?&limit="+limit.to_s+"&api-key=" + nytimes_api_key_newswire
-		@nytimes_response = HTTParty.get(nytimes_url)
+		@nytimes_content = Nytimes.content(["world"],@limit)
 
 		# USA Today
-		section = "world" # home/news/travel/money/sports/life/tech/weather/nation/world/religion/yl-health/nfl/mlb/nba/books/pepole/music and more
-		limit = 5
-		usatoday_api_key_articles = "tbpz9ghqvkjegddnxmxc6pea"
-		usatoday_url = "http://api.usatoday.com/open/articles/topnews/"+section+"?count="+limit.to_s+"&days=0&page=0&encoding=json&api_key=" + usatoday_api_key_articles
-		# @usatoday_response = HTTParty.get(usatoday_url)
-
-		# @usatoday_image_urls = []
-		# @usatoday_response.each do |k1,v1|
-		# 	v1.each do |v2|
-		# 		image_tag = HTTParty.get(v2['guid'][0]['value'])
-		# 		itemp = image_tag =~ (/class="articleBody"/)
-		# 		itemp = image_tag =~ (/role="main"/) if itemp.nil?
-		# 		if itemp.nil?
-		# 			@usatoday_image_urls << "default_image_url"
-		# 		else
-		# 			istart = image_tag.index('src="',itemp)
-		# 			iend = image_tag.index('"',(istart + 5))
-		# 			@usatoday_image_urls << image_tag[(istart + 5)..(iend - 1)].gsub('amp;','')
-		# 		end
-		# 	end
-		# end
+		# usatoday = Usatoday.content(["world"],@limit)
+		# @usatoday_content = usatoday[:response]
+		# @usatoday_image_urls = usatoday[:images]
 
 	end
 end

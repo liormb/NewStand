@@ -56,9 +56,12 @@ header {
 	top: 18px;
 	right: 0;
 }
+.search fieldset {
+	display: block;
+}
 .search input,
 .search button {
-	display: inline-block;
+	display: inline;
 	float: left;
 	height: 30px;
 	color: rgb(80,80,80);

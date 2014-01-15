@@ -1,6 +1,6 @@
 <!-- The Guardian -->
-<% if @guardian_response %>
-	<% @guardian_response['response']['editorsPicks'][0..(@guardian_limit-1)].each do |v2,k2| %>
+<% if @guardian_content %>
+	<% @guardian_content['response']['editorsPicks'][0..(@limit-1)].each do |v2,k2| %>
 		<div class="jumbotron">
 			<h5>The Guardian</h5>
 			<h2><%= v2['webTitle'] %></h2>
@@ -22,8 +22,8 @@
 <% end %>
 
 <!-- New York Times -->
-<% if @nytimes_response %>
-	<% @nytimes_response['results'].each do |v2,k2| %>
+<% if @nytimes_content %>
+	<% @nytimes_content['results'].each do |v2,k2| %>
 		<div class="jumbotron">
 			<h5><%= v2['source'] %></h5>
 			<h2><%= v2['title'] %></h2>
@@ -40,8 +40,8 @@
 <% end %>
 
 <!-- USA Today -->
-<% if @usatoday_response %>
-	<% @usatoday_response.each do |k1,v1| %>
+<% if @usatoday_content %>
+	<% @usatoday_content.each do |k1,v1| %>
 		<div class="jumbotron">
 			<% v1.each_with_index do |v2,k2| %>
 				<h5>USA Today</h5>
