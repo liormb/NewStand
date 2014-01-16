@@ -1,10 +1,12 @@
 <div class="jumbotron">
 
+	<h4>In order to create a new group, please choose an article first.</h4>
+
 	<% if @groups.empty? %>
 		<h2>No Groups Yet</h2>
 	<% else %>
 		<% @groups.each do |group| %>
-			<h3><%= group.name %></h3>
+			<a href="/comments/<%= group.id %>"><h3><%= group.name %></h3></a>
 			<h4><%= group.title %></h4>
 			<h4><%= group.description %></h4>
 			<img src="<%= group.image_url %>" alt="<%= group.title %>">

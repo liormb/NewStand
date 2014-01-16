@@ -4,6 +4,7 @@ Newstand::Application.routes.draw do
   resources :users, :except => [:create, :new]
   resources :articles
   resources :groups
+  resources :comments
 
   get '/' => 'articles#index'
   get '/articles/subject/:subject' => 'articles#index'
@@ -12,6 +13,8 @@ Newstand::Application.routes.draw do
   get '/groups' => 'groups#index'
   post '/groups/new' => 'groups#new'
   post '/groups/create' => 'groups#create'
+
+  post '/comments/create' => 'comments#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

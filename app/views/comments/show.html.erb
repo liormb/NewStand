@@ -1,0 +1,25 @@
+<div class="jumbotron">
+	
+	<h3><%= @group.name %></h3>
+	<h3><%= @group.title %></h3>
+	<h4><%= @group.description %></h4>
+	<img src="<%= @group.image_url %>" alt="<%= @group.title %>">
+
+	<% if @group.comments.count == 0 %>
+		<h4>No Comments Yet</h4>
+	<% else %>
+		<% @group.comments.each do |comment| %>
+			<h4><%= comment.content %></h4>
+		<% end %>
+	<% end %>
+
+	<form action="/comments/create" method="post">
+		<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+  	<input type="hidden" name="user_id" value="<%= current_user.id %>">
+  	<input type="hidden" name="group_id" value="<%= @group.id %>">
+  	<textarea class="" type="text" name="content" placeholder="Add comment..."></textarea>
+  	<label class="">Enter no more than 255 characters</label>
+  	<button class="" type="submit">Add Comment</button>
+  </form>
+
+</div>
