@@ -1,0 +1,14 @@
+<div class="jumbotron">
+
+	<% if @groups.empty? %>
+		<h2>No Groups Yet</h2>
+	<% else %>
+		<% @groups.each do |group| %>
+			<h3><%= group.name %></h3>
+			<h4><%= group.title %></h4>
+			<h4><%= group.description %></h4>
+			<img src="<%= group.image_url %>" alt="<%= group.title %>">
+		<% end %>
+	<% end %>
+
+</div>

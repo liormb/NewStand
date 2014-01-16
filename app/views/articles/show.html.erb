@@ -1,7 +1,7 @@
 <div class="jumbotron">
 	
 	<% if user_signed_in? %>
-		<form action="/articles/create" method="post">
+		<form action="/groups/new" method="post">
 			<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
 			<input type="hidden" name="article_url" value="<%= @article[:article_url] %>">
 			<input type="hidden" name="image_url" value="<%= @article[:image_url] %>">

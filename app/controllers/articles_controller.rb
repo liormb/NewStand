@@ -23,17 +23,4 @@ class ArticlesController < ApplicationController
 		@article[:description] = params[:description]
 	end
 
-	def new
-		@article = {
-			:article_url => params[:article_url],
-			:image_url => params[:image_url],
-			:source => params[:source],
-			:title => params[:title],
-			:description => params[:description]
-		}
-	end
-
-	def create
-	end
-
 end

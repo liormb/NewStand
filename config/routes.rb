@@ -5,14 +5,14 @@ Newstand::Application.routes.draw do
   resources :articles
   resources :groups
 
-  
-  
   get '/' => 'articles#index'
   get '/articles/subject/:subject' => 'articles#index'
   post '/articles/show' => 'articles#show'
-  post '/articles/create' => 'articles#new'
 
-  
+  get '/groups' => 'groups#index'
+  post '/groups/new' => 'groups#new'
+  post '/groups/create' => 'groups#create'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

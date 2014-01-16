@@ -5,7 +5,7 @@
 
 <img src="<%= @article[:image_url] %>" alt="<%= @article[:title] %>">
 
-<form action="/articles/create" method="post">
+<form action="/groups/create" method="post">
 	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
 	<input type="hidden" name="article_url" value="<%= @article[:article_url] %>">
 	<input type="hidden" name="image_url" value="<%= @article[:image_url] %>">
