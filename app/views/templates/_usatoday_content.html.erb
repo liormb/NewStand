@@ -1,0 +1,17 @@
+<% if usatoday_content %>
+	<% usatoday_content.each do |k1,v1| %>
+		<div class="jumbotron">
+			<% v1.each_with_index do |v2,k2| %>
+				<h5>USA Today</h5>
+				<h2><%= v2['title'] %></h2>
+				<h5><%= v2['pubDate'] %></h5>
+				<p><%= v2['description'] %></p>
+				<% if not @usatoday_image_urls[k2] == "default_image_url" %>
+					<img class="main-image" src="<%= @usatoday_image_urls[k2] %>" alt="<%= v2['title'] %>" width="120" height="120">
+				<% end %>
+				<br><a href="<%= v2['guid'][0]['value'] if v2['guid'][0]['isPermalink'] %>" target="_blank">LINK</a>
+				<hr>
+			<% end %>
+		</div>
+	<% end %>
+<% end %>

@@ -1,0 +1,28 @@
+<div class="bottom-header-container col-lg-12">
+	<div class="container col-lg-8 col-md-offset-2">
+		<nav class="navbar navbar-inverse" role="navigation">
+			<ul class="nav navbar-nav">
+				<% ["news","sports","life","money","tech","travel"].each do |subject| %>
+					<li><a href="/articles/subject/<%= subject %>"><%= subject.upcase %></a></li>
+				<% end %>
+			</ul>
+		</nav>
+
+		<div class="user dropdown">
+			<a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html"><div></div><span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<% if user_signed_in? %>
+					<li><a href="/users/sign_out">Sign Out</a></li>
+					<li>Hello <%= User.find(current_user.id).fullname %></li>
+				<% else %>
+					<li><a href="<%= user_session_path %>">Sign In</a></li>
+					<li><a href="<%= new_user_registration_path %>">Sign Up</a></li>
+				<% end %>
+			</ul>
+		</div>
+
+		<p class="notice"><%= notice %></p>
+		<p class="alert .lead"><%= alert %></p>
+
+	</div>
+</div><!-- bottom-header-container -->

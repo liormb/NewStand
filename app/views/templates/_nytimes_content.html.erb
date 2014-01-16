@@ -1,0 +1,16 @@
+<% if nytimes_content %>
+	<% nytimes_content.each do |v2,k2| %>
+		<div class="jumbotron">
+			<h5><%= v2['source'] %></h5>
+			<h2><%= v2['title'] %></h2>
+			<h5><%= v2['published_date'] %></h5>
+			<p><%= v2['abstract'] %></p>
+			<% image_url = v2['multimedia'].empty? ? v2['thumbnail_standard'] : v2['multimedia'][0]['url'] %>
+			<% if not image_url.empty? %>
+				<img src="<%= image_url %>" alt="<%= v2['title'] %>" width="120" height="120">
+			<% end %>
+			<br><a href="<%= v2['url'] %>" target="_blank">LINK</a>
+			<hr>
+		</div>
+	<% end %>
+<% end %>

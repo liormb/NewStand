@@ -2,14 +2,16 @@ Newstand::Application.routes.draw do
 
   devise_for :users
   resources :users, :except => [:create, :new]
+  resources :articles
+  resources :groups
 
-  #get '/users/sign_in' :to => 'users#index'
+  
+  
+  get '/' => 'articles#index'
+  get '/articles/subject/:subject' => 'articles#index'
+  post '/articles/show' => 'articles#show'
+  post '/articles/create' => 'articles#new'
 
-  #get '/users/sign_out' :to => 'users#index'
-  # root :to => "home#index"
-  root :to => 'welcome#index'
-
-  get '/' => 'welcome#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

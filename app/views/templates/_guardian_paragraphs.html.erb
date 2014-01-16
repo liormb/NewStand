@@ -1,0 +1,8 @@
+<% while not article[:content].index("<p>").nil? %>
+	<%
+		istart = article[:content].index("<p>") + "<p>".length
+		iend = article[:content].index("</p>") - 1
+	%>
+		<p><%= article[:content][istart..iend] %></p>
+	<% article[:content] = article[:content].sub("<p>","").sub("</p>","") %>
+<% end %>
