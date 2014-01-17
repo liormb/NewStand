@@ -34,14 +34,17 @@ Create new group descussion
 
 ##Testing
 
-I am using rspec and capybara in order to test this application. The testing result might get beter as time passed.
+I am using [rspec](http://rspec.info) and [Capybara](https://github.com/jnicklas/capybara) in order to test this application and to give you a better and stable application.
 I'll appriciate any help or advice to make those test better in order to give you the most stable application I can give.
 
-![Example1](app/assets/images/main-page.png)
+![Example1](app/assets/images/simplecov.png)
 Screenshot of the latest testing result provided by [SimpleCov](https://github.com/colszowka/simplecov)
 
 
 
 ##Visit as at:
-HEROKU: http://newstand.herokuapp.com/
+NewStand: http://newstand.herokuapp.com/
+
+##Other interesting project:
+BlockOverflow: http://blogjunky.herokuapp.com
 
