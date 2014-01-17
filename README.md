@@ -45,6 +45,6 @@ Screenshot of the latest testing result provided by [SimpleCov](https://github.c
 ##Visit as at:
 NewStand: http://newstand.herokuapp.com/
 
-##Other interesting project:
+###Other interesting project:
 BlockOverflow: http://blogjunky.herokuapp.com
 
