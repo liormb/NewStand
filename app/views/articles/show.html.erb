@@ -1,10 +1,12 @@
-<div class="jumbotron">
+<div id="show-article" class="jumbotron">
 	
 	<% if user_signed_in? %>
 		<%= render 'templates/create_group_form.html', :article => @article %>
 	<% end %>
 	
 	<h2><%= @article[:title] %></h2>
+
+	<h3><%= @article[:description] %></h3>
 
 	<img src="<%= @article[:image_url] %>" alt="<%= @article[:title] %>">
 

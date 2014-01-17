@@ -6,13 +6,6 @@ class GroupsController < ApplicationController
 
 	def new
 		Group.add_group(params)
-		# @article = {
-		# 	:article_url => params[:article_url],
-		# 	:image_url => params[:image_url],
-		# 	:source => params[:source],
-		# 	:title => params[:title],
-		# 	:description => params[:description]
-		# }
 		redirect_to :action => 'index'
 	end
 
@@ -22,10 +15,14 @@ class GroupsController < ApplicationController
 			:image_url => params[:image_url],
 			:source => params[:source],
 			:title => params[:title],
+			:admin_id => params[:admin_id],
 			:description => params[:description]
 		}
-		#Group.add_group(params)
-		#redirect_to :action => 'new', :params => params
+	end
+
+	def destroy
+		Group.find(params[:id]).destroy
+		redirect_to :action => 'index'
 	end
 
 end

@@ -1,15 +1,28 @@
-<div class="jumbotron">
-
+<div id="group-list" class="jumbotron">
+	
 	<h4>In order to create a new group, please choose an article first.</h4>
 
 	<% if @groups.empty? %>
 		<h2>No Groups Yet</h2>
 	<% else %>
 		<% @groups.each do |group| %>
-			<a href="/comments/<%= group.id %>"><h3><%= group.name %></h3></a>
-			<h4><%= group.title %></h4>
-			<h4><%= group.description %></h4>
-			<img src="<%= group.image_url %>" alt="<%= group.title %>">
+			<section class="clearfix">
+				<a href="/comments/<%= group.id %>"><h3><%= group.name %></h3></a>
+				<h4><%= group.title %></h4>
+				<h4><%= group.description %></h4>
+
+				<% if group.image_url != "empty" && group.image_url != "" %>
+					<img src="<%= group.image_url %>" alt="<%= group.title %>">
+				<% end %>
+				
+				<% if group.admin_id == current_user.id %>
+					<a class="btn btn-primary btn-sm" href="/groups/<%= group.id %>/edit">Edit</a>
+					<a class="btn btn-primary btn-sm" href="/groups/<%= group.id %>/delete">Delete</a>
+				<% end %>
+
+				<div class="clearfix"></div>
+
+			</section>
 		<% end %>
 	<% end %>
 

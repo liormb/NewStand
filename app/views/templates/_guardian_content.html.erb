@@ -4,26 +4,27 @@
 			trailText = v2['fields']['trailText']
 			standfirst = v2['fields']['standfirst']
 			description = trailText[0..2] == "<p>" ? standfirst : trailText
+			image_url = v2['fields'].empty? ? "" : v2['fields']['thumbnail']
 		%>
 		<div class="jumbotron">
-			<h5>The Guardian</h5>
-			<h2>
-				<form action="/articles/show" method="post">
-					<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
-					<input type="hidden" name="article_url" value="<%= v2['webUrl'] %>"> 
-					<input type="hidden" name="image_url" value="<%= v2['fields'].empty? ? "empty" : v2['fields']['thumbnail'] %>">
-					<input type="hidden" name="description" value="<%= description %>"> 
-					<button type="submit"><%= v2['webTitle'] %></button>
-				</form>
-			</h2>
 			
-			<p><%= description %></p>
-			<% image_url = v2['fields'].empty? ? "empty" : v2['fields']['thumbnail'] %>
-			<% if image_url %>
-				<img src="<%= image_url %>" alt="<%= v2['webTitle'] %>" width="300">
+			<h5 class="label label-primary">The Guardian</h5>
+			<h2><%= v2['webTitle'] %></h2>
+			<p class="<%= "short-description" if image_url != "" %>"><%= description %></p>
+
+			<% if image_url != "" %>
+				<img class="one-edge-shadow" src="<%= image_url %>" alt="<%= v2['webTitle'] %>">
 			<% end %>
-			<br><a href="<%= v2['webUrl'] %>" target="_blank">LINK</a>
-			<hr>
+
+			<form action="/articles/show" method="post">
+				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+				<input type="hidden" name="article_url" value="<%= v2['webUrl'] %>"> 
+				<input type="hidden" name="image_url" value="<%= image_url %>">
+				<input type="hidden" name="description" value="<%= description %>"> 
+				<button class="read-more-link" type="submit">Read More</button>
+			</form>
+
+			<div class="clearfix"></div>
 		</div>
 	<% end %>
 <% end %>

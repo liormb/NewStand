@@ -3,7 +3,7 @@ Newstand::Application.routes.draw do
   devise_for :users
   resources :users, :except => [:create, :new]
   resources :articles
-  resources :groups, :except => [:new]
+  resources :groups, :except => [:new, :delete, :update]
   resources :comments
 
   get '/' => 'articles#index'
@@ -11,6 +11,9 @@ Newstand::Application.routes.draw do
   get '/articles/subject/:subject' => 'articles#index'
   post '/groups/create' => 'groups#create'
   post '/groups/new' => 'groups#new'
+  get '/groups/:id/delete' => 'groups#destroy'
+  get '/groups/:id/update' => 'groups#update'
+
   post '/comments/create' => 'comments#new'
 
   # The priority is based upon order of creation:
