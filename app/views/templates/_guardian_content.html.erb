@@ -19,7 +19,7 @@
 			
 			<p><%= description %></p>
 			<% image_url = v2['fields'].empty? ? "empty" : v2['fields']['thumbnail'] %>
-			<% if not image_url.empty? %>
+			<% if image_url %>
 				<img src="<%= image_url %>" alt="<%= v2['webTitle'] %>" width="300">
 			<% end %>
 			<br><a href="<%= v2['webUrl'] %>" target="_blank">LINK</a>

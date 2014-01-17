@@ -44,7 +44,7 @@ class Guardian < ActiveRecord::Base
 
 	def self.article_content(text)
 		pos = @position
-		pos = text.index("article-body-blocks",pos)
+		pos = text.index("article-body-blocks")
 		return "" if pos.nil?
 		istart = text.index("<p",pos)
 		return "" if istart.nil?

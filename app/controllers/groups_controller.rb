@@ -5,6 +5,18 @@ class GroupsController < ApplicationController
 	end
 
 	def new
+		Group.add_group(params)
+		# @article = {
+		# 	:article_url => params[:article_url],
+		# 	:image_url => params[:image_url],
+		# 	:source => params[:source],
+		# 	:title => params[:title],
+		# 	:description => params[:description]
+		# }
+		redirect_to :action => 'index'
+	end
+
+	def create
 		@article = {
 			:article_url => params[:article_url],
 			:image_url => params[:image_url],
@@ -12,11 +24,8 @@ class GroupsController < ApplicationController
 			:title => params[:title],
 			:description => params[:description]
 		}
-	end
-
-	def create
-		Group.add_group(params)
-		redirect_to :action => 'index'
+		#Group.add_group(params)
+		#redirect_to :action => 'new', :params => params
 	end
 
 end

@@ -1,5 +1,13 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "check the user model" do
+  	before do
+  		@user = FactoryGirl.create(:user)
+  	end
+
+  	it "print the user full name" do
+  		@user.fullname.should == "John Smith"
+  	end
+  end
 end

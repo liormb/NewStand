@@ -6,14 +6,20 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+
 gem 'pry'
 gem 'pry-rails'
 gem 'rspec-rails'
+gem 'simplecov'
 
 gem 'httparty'
 gem 'oauth'
 
 gem 'devise'
+
+gem "email_spec", :group => :test
+gem "factory_girl_rails", :group => [:development, :test]
+gem "database_cleaner", :group => :test
 
 # Gems used only for assets and not required
 # in production environments by default.

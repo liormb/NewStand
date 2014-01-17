@@ -16,6 +16,10 @@ class ArticlesController < ApplicationController
 		# @usatoday_image_urls = usatoday[:images]
 	end
 
+	def create
+		redirect_to :action => 'index'
+	end
+
 	def show
 		@article = Guardian.page_content(params[:article_url])
 		@article[:image_url] = params[:image_url]
