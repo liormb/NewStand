@@ -1,5 +1,22 @@
-NewStand Application
+#NewStand
 
-Website: http://newstand.herokuapp.com/
+##Read news, choose your favorite topic, create and join group descussions
 
-In this application, users can watch news upon their personal preferences, open a group descusions, leave comments and like each others comments.
+####With NewStand you can check the latest news of those topics:
+* News
+* Sports
+* Life
+* Money
+* Tech
+* Travel
+
+You can also explore, join and even create new group descusion about news that you read before.
+
+
+##Screenshots
+
+
+
+##Visit as at:
+HEROKU: http://newstand.herokuapp.com/
+
