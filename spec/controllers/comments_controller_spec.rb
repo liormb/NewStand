@@ -16,8 +16,8 @@ describe CommentsController do
 
 		describe "go to show comments page" do
 			before do
-				@params = @group
-				get :new
+				#@params = @group
+				#get :new
 			end
 
 			it "show specific comments" do

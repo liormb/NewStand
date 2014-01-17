@@ -28,14 +28,20 @@ describe GroupsController do
 			end
 		end
 
+		describe "choose a group" do
+			it "delete it" do
+				#@params[:id] = @group.id
+				#get :destroy
+			end
+		end
+
 		describe "show individual article" do
 			before do
-				@params = @group
-				post :create
+				post :create, @group
 			end
 
 			it "have all the article's information" do
-				#assigns(:article)[:image_url].should == @params[:image_url]
+				Group.where({id: @group.id}).first.image_url.sould == "http://myimage.png"
 			end
 		end
 

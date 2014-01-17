@@ -13,13 +13,10 @@ gem 'rspec-rails'
 gem 'simplecov'
 
 gem 'httparty'
-gem 'oauth'
 
 gem 'devise'
 
-gem "email_spec", :group => :test
 gem "factory_girl_rails", :group => [:development, :test]
-gem "database_cleaner", :group => :test
 
 # Gems used only for assets and not required
 # in production environments by default.

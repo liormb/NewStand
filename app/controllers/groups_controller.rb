@@ -20,6 +20,10 @@ class GroupsController < ApplicationController
 		}
 	end
 
+	def edit
+		@group = Group.find(params[:id])
+	end
+
 	def destroy
 		Group.find(params[:id]).destroy
 		redirect_to :action => 'index'
