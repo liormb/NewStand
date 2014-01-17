@@ -32,6 +32,15 @@ Read the article that you find interesting
 ![Example3](app/assets/images/create-group.png)
 Create new group descussion
 
+##Testing
+
+I am using rspec and capybara in order to test this application. The testing result might get beter as time passed.
+I'll appriciate any help or advice to make those test better in order to give you the most stable application I can give.
+
+![Example1](app/assets/images/main-page.png)
+Screenshot of the latest testing result provided by [SimpleCov](https://github.com/colszowka/simplecov)
+
+
 
 ##Visit as at:
 HEROKU: http://newstand.herokuapp.com/
