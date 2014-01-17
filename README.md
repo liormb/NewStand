@@ -1,5 +1,5 @@
 #NewStand
-By [Lior ELrom](http://liormb.com/).
+By [Lior Elrom](http://liormb.com/).
 
 ##Read the latest news, choose your favorite topic, create and join group descussions
 
