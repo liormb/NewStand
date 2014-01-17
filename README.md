@@ -34,15 +34,15 @@ Create new group descussion
 
 ##Testing
 
-I am using [rspec](http://rspec.info) and [Capybara](https://github.com/jnicklas/capybara) in order to test this application and to give you a better and stable application.
-I'll appriciate any help or advice to make those test better in order to give you the most stable application I can give.
+I am using [rspec](http://rspec.info) and [Capybara](https://github.com/jnicklas/capybara) in order to test the NewStand application and to give you a better and stable version.
+I'll appriciate any help or advice to make tests better and give you the most stable application I can give.
 
 ![Example1](app/assets/images/simplecov.png)
 Screenshot of the latest testing result provided by [SimpleCov](https://github.com/colszowka/simplecov)
 
 
 
-##Explor NewStand at:
+##Explore NewStand at:
 NewStand: http://newstand.herokuapp.com/
 
 ###Other interesting projects:
