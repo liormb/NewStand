@@ -1,9 +1,9 @@
 #NewStand
 By [Lior Elrom](http://liormb.com/).
 
-##Read the latest news, choose your favorite topic, create and join group descussions
+##Read the latest news, choose your favorite topic, create and join group descussions.
 
-####Resources: The british Guardian, The New York Times and the USA Today newspapers
+####Resources: The british [Guardian](http://www.theguardian.com/us), The [New York Times](http://www.nytimes.com) and the [USA Today](http://www.usatoday.com) newspapers.
 
 ####With NewStand you can check the latest news of those topics:
 * News
